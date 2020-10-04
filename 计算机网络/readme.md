@@ -51,7 +51,7 @@
 ### TCP 与 UDP 头部
 
 #### TCP 头部
-![](_figs/head_TCP.jpg "tcp头部")
+<img src='_figs/head_TCP.jpg' width="400" />
 
 **序列号**：在建立连接时由计算机生成的随机数作为其初始值，通过 `SYN` 包传给接收端主机，每发送一次数据，就「累加」一次该「数据字节数」的大小。用来解决网络包乱序问题。
 
@@ -63,14 +63,15 @@
 
 UDP 协议简单，头部只有 8 个字节（ 64 位），UDP 的头部格式如下：
 
-![](_figs/head_UDP.jpg){ width=10% }
+<img src='_figs/head_UDP.jpg' width="400" />
 
 
 ### TCP建立连接 -- 三次握手
 
 TCP 是面向连接的协议，所以使用 TCP 前必须先建立连接，而建立连接是通过三次握手而进行的。
 
-![](_figs/three_handshakes.jpg "三次握手")
+<img src='_figs/three_handshakes.jpg' width="400" align="middle" />
+
 
 #### 为什么是三次握手？不是两次、四次？
 
@@ -90,7 +91,7 @@ IP 层本身没有超时重传机制，它由传输层的 TCP 来负责超时和
 
 ### TCP 连接断开 -- 四次挥手
 
-![](_figs/four_handwave.jpg '四次挥手')
+<img src='_figs/four_handwave.jpg' width="400" />
 
 #### 为什么挥手需要四次？
 

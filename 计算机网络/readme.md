@@ -63,7 +63,7 @@
 
 UDP 协议简单，头部只有 8 个字节（ 64 位），UDP 的头部格式如下：
 
-![](_figs/head_UDP.jpg =30x30)
+![](_figs/head_UDP.jpg){ width=10% }
 
 
 ### TCP建立连接 -- 三次握手

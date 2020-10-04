@@ -53,7 +53,7 @@
 #### TCP 头部
 
 <div align="center">    
-    <img src='_figs/head_TCP.jpg' width="400" />
+    <img src='_figs/head_TCP.jpg' width="431" />
 </div>
 
 
@@ -67,16 +67,16 @@
 
 UDP 协议简单，头部只有 8 个字节（ 64 位），UDP 的头部格式如下：
 
-<div align="center" width="400">    
-    <img src='_figs/head_UDP.jpg'  />
+<div align="center" >    
+    <img src='_figs/head_UDP.jpg' width="431"/>
 </div>
 
 ### TCP建立连接 -- 三次握手
 
 TCP 是面向连接的协议，所以使用 TCP 前必须先建立连接，而建立连接是通过三次握手而进行的。
 
-<div align="center" width="400>    
-   <img src='_figs/three_handshakes.jpg' " />
+<div align="center" >    
+   <img src='_figs/three_handshakes.jpg' width="431" />
 </div>
 
 
@@ -99,8 +99,8 @@ IP 层本身没有超时重传机制，它由传输层的 TCP 来负责超时和
 
 ### TCP 连接断开 -- 四次挥手
 
-<div align="center" width="400">    
-    <img src='_figs/four_handwave.jpg'/>
+<div align="center" >    
+    <img src='_figs/four_handwave.jpg' width="431"/>
 </div>
 
 #### 为什么挥手需要四次？

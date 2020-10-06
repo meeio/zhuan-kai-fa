@@ -3,38 +3,47 @@
 ### 快速排序 C++ 实现
 
 ```c++
-int partition(int arr[], int low, int high) {
-    int pivot = arr[high];  // taking the last element as pivot
-    int i = (low - 1);      // Index of smaller element
+/**
+ *  This function takes last element as pivot, places
+ *  the pivot element at its correct position in sorted
+ *  array, and places all smaller (smaller than pivot)
+ *  to left of pivot and all greater elements to right
+ *  of pivot
+ *
+ */
 
-    for (int j = low; j < high; j++) {
-        // If current element is smaller than or
-        // equal to pivot
-        if (arr[j] <= pivot) {
-            i++;  // increment index of smaller element
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-        }
-    }
-    int temp = arr[i + 1];
-    arr[i + 1] = arr[high];
-    arr[high] = temp;
-    return (i + 1);
+int partition (int nums[], int low, int high){
+	int pivot = nums[high];
+	int small = low - 1;
+
+	for (int pos = low; pos < high; pos++){
+		if (nums[pos] <= pivot){
+			small++;
+			int temp = nums[pos];
+			nums[pos] = nums[small];
+			nums[small] = temp;
+		}
+	}
+
+	nums[high] = nums[++small];
+	nums[small] = pivot;
+
+	return small;
 }
 
 /**
- *      The main function that implements QuickSort
- *      arr[] --> Array to be sorted,
- *      low --> Starting index,
- *      high --> Ending index
+ *  The main function that implements QuickSort
+ *  nums[] --> Array to be sorted,
+ *  low --> Starting index,
+ *  high --> Ending index
  */
-void quickSort(int arr[], int low, int high) {
-    if (low < high) {
-        int p = partition(arr, low, high);
-        quickSort(arr, low, p - 1);
-        quickSort(arr, p + 1, high);
-    }
+void quick_sort(int nums[], int low, int high){
+	if (low == high) return;
+
+	int pivot_pos = partition(nums, low, high);
+
+	quick_sort(nums, low, pivot_pos - 1);
+	quick_sort(nums, pivot_pos + 1, high);
 }
 
 ```

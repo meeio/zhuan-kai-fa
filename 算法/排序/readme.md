@@ -40,7 +40,7 @@ int partition (int nums[], int low, int high){
  *  high --> Ending index
  */
 void quick_sort(int nums[], int low, int high){
-    if (low == high) return;
+    if (low >= high) return;
 
     int pivot_pos = partition(nums, low, high);
 

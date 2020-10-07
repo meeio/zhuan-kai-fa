@@ -73,16 +73,14 @@ void merge(int *arr, int l, int m, int r) {
     for (int i = 0; i < n1; i++) L[i] = arr[l + i];
     for (int i = 0; i < n2; i++) R[i] = arr[m + 1 + i];
 
-
     int i = 0;
     int j = 0;
-    int k = 0;
+    int k = l;
     while (i < n1 || j < n2) {
         if (j >= n2 || (i < n1 && L[i] <= R[j]))
             arr[k++] = L[i++];
         else
-            arr[k++] = L[j++];
-        k++;
+            arr[k++] = R[j++];
     }
 
     delete[] L;

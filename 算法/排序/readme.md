@@ -2,6 +2,8 @@
 
 ### 快速排序 C++ 实现
 
+> Ref: https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/sorting/quick_sort.cpp
+
 ```c++
 /**
  *  This function takes last element as pivot, places

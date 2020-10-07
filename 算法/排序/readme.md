@@ -15,22 +15,22 @@
  */
 
 int partition (int nums[], int low, int high){
-	int pivot = nums[high];
-	int small = low - 1;
+    int pivot = nums[high];
+    int small = low - 1;
 
-	for (int pos = low; pos < high; pos++){
-		if (nums[pos] <= pivot){
-			small++;
-			int temp = nums[pos];
-			nums[pos] = nums[small];
-			nums[small] = temp;
-		}
-	}
+    for (int pos = low; pos < high; pos++){
+        if (nums[pos] <= pivot){
+            small++;
+            int temp = nums[pos];
+            nums[pos] = nums[small];
+            nums[small] = temp;
+        }
+    }
 
-	nums[high] = nums[++small];
-	nums[small] = pivot;
+    nums[high] = nums[++small];
+    nums[small] = pivot;
 
-	return small;
+    return small;
 }
 
 /**
@@ -40,12 +40,12 @@ int partition (int nums[], int low, int high){
  *  high --> Ending index
  */
 void quick_sort(int nums[], int low, int high){
-	if (low == high) return;
+    if (low == high) return;
 
-	int pivot_pos = partition(nums, low, high);
+    int pivot_pos = partition(nums, low, high);
 
-	quick_sort(nums, low, pivot_pos - 1);
-	quick_sort(nums, pivot_pos + 1, high);
+    quick_sort(nums, low, pivot_pos - 1);
+    quick_sort(nums, pivot_pos + 1, high);
 }
 
 ```

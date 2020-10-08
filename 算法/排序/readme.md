@@ -1,10 +1,8 @@
-
-
 ### 快速排序 C++ 实现
 
 > Ref: https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/sorting/quick_sort.cpp
 
-```cpp
+``` cpp
 /**
  *  This function takes last element as pivot, places
  *  the pivot element at its correct position in sorted
@@ -18,18 +16,11 @@ int partition (int nums[], int low, int high){
     int pivot = nums[high];
     int small = low - 1;
 
-    for (int pos = low; pos < high; pos++){
-        if (nums[pos] <= pivot){
-            small++;
-            int temp = nums[pos];
-            nums[pos] = nums[small];
-            nums[small] = temp;
-        }
-    }
+    for (int pos = low; pos < high; pos++)
+        if (nums[pos] <= pivot)
+            swap(nums[++small], nums[pos]);
 
-    nums[high] = nums[++small];
-    nums[small] = pivot;
-
+	swap(nums[++small], nums[high]);
     return small;
 }
 
@@ -54,7 +45,7 @@ void quick_sort(int nums[], int low, int high){
 
 > Ref: https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/sorting/merge_sort.cpp
 
-```cpp
+``` cpp
 /**
  *
  * The merge() function is used for merging two halves.
@@ -99,6 +90,55 @@ void mergeSort(int *arr, int l, int r) {
         mergeSort(arr, l, m);
         mergeSort(arr, m + 1, r);
         merge(arr, l, m, r);
+    }
+}
+```
+
+### 堆排序 C++ 实现
+
+> Ref: https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/sorting/merge_sort.cpp
+
+``` c++
+/**
+ *  build a heap from idx to heap_size
+ */
+template <typename T>
+void heapify(T arr[], int idx, int high)
+{
+    int largest = idx;
+
+    int l_idx = (idx << 1) + 1;
+    int r_idx = (idx << 1) + 2;
+
+    if (l_idx <= high && arr[l_idx] > arr[largest])
+        largest = l_idx;
+
+    if (r_idx <= high && arr[r_idx] > arr[largest])
+        largest = r_idx;
+
+    if (largest != idx)
+    {
+        swap(arr[idx], arr[largest]);
+        heapify(arr, largest, high);
+    }
+}
+
+/**
+ * Utilizes heapify procedure to sort
+ * the array
+ *
+
+ */
+template <typename T>
+void heapSort(T arr[], int high)
+{
+    for (int idx = (high >> 1); idx >= 0; idx--)
+        heapify(arr, idx, high);
+
+    for (int tail = high; tail >= 0; tail--)
+    {
+        heapify(arr, 0, tail);
+        std::swap(arr[0], arr[tail]);
     }
 }
 ```

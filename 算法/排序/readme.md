@@ -19,8 +19,8 @@ int partition (int nums[], int low, int high){
     for (int pos = low; pos < high; pos++)
         if (nums[pos] <= pivot)
             swap(nums[++small], nums[pos]);
-
-	swap(nums[++small], nums[high]);
+    
+    swap(nums[++small], nums[high]);
     return small;
 }
 

@@ -9,9 +9,7 @@
  *  array, and places all smaller (smaller than pivot)
  *  to left of pivot and all greater elements to right
  *  of pivot
- *
  */
-
 int partition (int nums[], int low, int high){
     int pivot = nums[high];
     int small = low - 1;
@@ -52,7 +50,6 @@ void quick_sort(int nums[], int low, int high){
  * The merge(arr, l, m, r) is key process that assumes that
  * arr[l..m] and arr[m+1..r] are sorted and merges the two
  * sorted sub-arrays into one.
- * 
  */
 void merge(int *arr, int l, int m, int r) {
     int n1 = m - l + 1;

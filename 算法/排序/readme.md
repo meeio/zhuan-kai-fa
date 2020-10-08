@@ -96,7 +96,7 @@ void mergeSort(int *arr, int l, int r) {
 
 ### 堆排序 C++ 实现
 
-> Ref: https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/sorting/merge_sort.cpp
+> Ref: https://github.com/TheAlgorithms/Python/blob/master/sorts/heap_sort.py
 
 ``` c++
 /**
@@ -126,8 +126,6 @@ void heapify(T arr[], int idx, int high)
 /**
  * Utilizes heapify procedure to sort
  * the array
- *
-
  */
 template <typename T>
 void heapSort(T arr[], int high)

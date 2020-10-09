@@ -10,7 +10,8 @@
  *  to left of pivot and all greater elements to right
  *  of pivot
  */
-int partition (int nums[], int low, int high){
+int partition (int nums[], int low, int high)
+{
     int pivot = nums[high];
     int small = low - 1;
 
@@ -28,7 +29,8 @@ int partition (int nums[], int low, int high){
  *  low --> Starting index,
  *  high --> Ending index
  */
-void quick_sort(int nums[], int low, int high){
+void quick_sort(int nums[], int low, int high)
+{
     if (low >= high) return;
 
     int pivot_pos = partition(nums, low, high);
@@ -51,7 +53,8 @@ void quick_sort(int nums[], int low, int high){
  * arr[l..m] and arr[m+1..r] are sorted and merges the two
  * sorted sub-arrays into one.
  */
-void merge(int *arr, int l, int m, int r) {
+void merge(int *arr, int l, int m, int r) 
+{
     int n1 = m - l + 1;
     int n2 = r - m;
 
@@ -81,8 +84,10 @@ void merge(int *arr, int l, int m, int r) {
  * and then calls merge() to merge the two halves
  *
  */
-void mergeSort(int *arr, int l, int r) {
-    if (l < r) {
+void mergeSort(int *arr, int l, int r) 
+{
+    if (l < r) 
+    {
         int m = (l + r ) >> 1;
         mergeSort(arr, l, m);
         mergeSort(arr, m + 1, r);

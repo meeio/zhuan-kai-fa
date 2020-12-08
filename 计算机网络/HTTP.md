@@ -1,5 +1,6 @@
 
 
+# HTTP 概述
 
 HTTP 是一个基于 `TCP/IP` 通信协议来传递数据的协议，传输的数据类型为HTML 文件、图片文件、查询结果等。
 HTTP 是一种「请求/响应」（「Request/Response」）模式的协议。

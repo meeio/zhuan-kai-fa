@@ -1,4 +1,4 @@
-# IO 多路复用
+# 定义
 
 {% hint style="info" %}
 参考内容：https://zhuanlan.zhihu.com/p/64138532
@@ -11,13 +11,13 @@
 也不能用非阻塞方式，轮询所有的连接，这会浪费掉大量CPU时间；
 只能告诉系统，我对哪些连接感兴趣，有消息来的时候，通知我处理。
 
-## Reactor 模式
+# Reactor 模式
 
 {% hint style="info" %}
 参考内容：https://juejin.im/post/6844903688780120078
 {% endhint %}
 
-### Select
+## Select
 
 Select 通过文件描述符 `fd` 列表来储存要监听的 socket，并且把主线程添加到这些 socket 的「等待队列」中。
 `fd` 列表会被拷贝至内核，当其中的socket接收到数据时，会触发中断程序，内核接过CPU使用，将主线程从每个socket的「等待队列」中删除，并加入到「工作列表」中。
@@ -25,7 +25,7 @@ Select 通过文件描述符 `fd` 列表来储存要监听的 socket，并且把
 
 Select 的缺点在于需要大量的拷贝，而且需要 O(n) 的时间遍历 `fd` 列表进行「等待队列」的相关操作，以及线程激活后的就绪 socket 查询。
 
-### Epoll
+## Epoll
 
 由于 Select 是直接与主线程进行交互的，所以这种设计也是不可避免，可以引入中间方来解决 Select 存在的问题，这就是 Epoll的主要思想。
 

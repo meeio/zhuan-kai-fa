@@ -1,3 +1,9 @@
+# TCP/IP 网络模型
+
+<div align="center">    
+    <img src='_figs/module.png' width="700" />
+</div>
+
 
 # TCP 与 UDP 
 

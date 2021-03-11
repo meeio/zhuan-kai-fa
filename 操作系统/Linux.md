@@ -49,3 +49,8 @@ ps -T -p pid
 lsof -i tcp -a -p pid
 ```
 
+# 在不同的主机间传文件 SCP
+
+```
+scp /shop.tar.gz root@192.168.230.128:/home/root
+```
